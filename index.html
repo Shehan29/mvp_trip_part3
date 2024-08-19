@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>MVP Trip Part 3</title>
+
+	<!-- responsive -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!-- meta -->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+	<meta name="title" content="Puzzlefy">
+	<meta name="description" content="Solve and share puzzles to your friends!">
+	<meta name="keywords" content="puzzle, jigsaw, p5js, puzzlefy, puzzlify, image to puzzle, image to jigsaw">
+
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="puzzlefy.netlify.app">
+	<meta property="og:url" content="https://puzzlefy.netlify.app">
+	<!-- https://github.com/Shehan29/mvp_trip_part3/blob/main/qr.png?raw=true -->
+
+	<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/f/fe/Puzzle.jpg">
+	<meta property="og:title" content="MVP Trip Part 3">
+
+	<script src=meta.js></script>
+
+	<!-- style -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- icons -->
+	<script src="https://kit.fontawesome.com/d86c5c458d.js" crossorigin="anonymous"></script>
+</head>
+
+<body touch-action=none unresolved>
+	<div style="text-align:center;">
+		<h1>MVP Trip Part 3</h1>
+	</div>
+
+	<div class="ui disabled">
+		<!-- functionalities -->
+		<div class=ui-container>
+			<div class=tooltip>
+				<span class=tooltip-content>Fullscreen</span>
+				<div class=functionality onclick="toggleFullscreen(this)">
+					<i class="fas fa-expand"></i>
+				</div>
+			</div>
+			<!-- cheated -->
+			<div class=tooltip>
+				<span class=tooltip-content>Reset</span>
+				<div class=functionality onclick="reset()" style=display:none>
+					<i class="fas fa-undo"></i>
+				</div>
+			</div>
+			<div class=tooltip>
+				<span class=tooltip-content>Solve</span>
+				<div class=functionality onclick="solve()" style=display:none>
+					<i class="fas fa-puzzle-piece"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- scripts -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+	<script src=plugins/clipboard.js></script>
+	<script src=plugins/transform.js></script>
+	<script src=plugins/cors.js></script>
+	<script src=jigsaw.js></script>
+	<script src=script.js></script>
+</body>
+
+</html>
