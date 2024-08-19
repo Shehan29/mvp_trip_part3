@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue Splash Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .splash-page {
+            position: relative;
+            background-image: url('mvps3.jpg');
+            /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Dark overlay */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .clue {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clue img {
+            height: 2rem;
+            /* Ensures the images match the font size */
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+
+        .clue span {
+            font-size: 2rem;
+            margin: 0 10px;
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+        }
+
+        input[type="text"].error {
+            border-color: red;
+        }
+
+        input[type="text"].success {
+            border-color: green;
+        }
+
+        .error-message,
+        .success-message {
+            margin-top: 10px;
+        }
+
+        .error-message {
+            color: red;
+        }
+
+        .success-message {
+            color: green;
+        }
+
+        .splash-button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .splash-button:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="splash-page">
+        <div class="overlay"></div>
+        <div class="content">
+            <form id="clue-form" onsubmit="event.preventDefault(); validateAnswer();">
+
+                <div class="clue">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/640px-Flag_of_Canada_%28Pantone%29.svg.png"
+                        alt="Canada">
+
+                    <!-- Plus symbol -->
+                    <span>+</span>
+
+                    <img src="https://cdn.pixabay.com/photo/2014/04/03/10/26/banana-310449_640.png" alt="Banana">
+
+                </div>
+                <div class="input-container">
+                    <input type="text" id="answer" placeholder="Enter your answer here">
+                    <div id="message" class="error-message"></div>
+                </div>
+                <button class="splash-button" onclick="validateAnswer()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateAnswer() {
+            const input = document.getElementById('answer');
+            const message = document.getElementById('message');
+            const userInput = input.value.trim().toLowerCase();
+
+            if (userInput === 'cabana') {
+                input.classList.remove('error');
+                input.classList.add('success');
+                message.textContent = 'Correct!';
+                message.className = 'success-message';
+
+                // Navigate to the next page after 3 seconds
+                setTimeout(() => {
+                    window.location.href = 'part4.html'; // Replace with your next page URL
+                }, 3000);
+            } else {
+                input.classList.remove('success');
+                input.classList.add('error');
+                message.textContent = 'Try again';
+                message.className = 'error-message';
+            }
+        }
+    </script>
+</body>
+
+</html>

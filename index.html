@@ -1,75 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8">
-	<title>MVP Trip Part 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Splash Page</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-	<!-- responsive -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
+		body,
+		html {
+			height: 100%;
+			font-family: Arial, sans-serif;
+		}
 
-	<!-- meta -->
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		.splash-page {
+			position: relative;
+			background-image: url('mvps0.png');
+			/* Replace with your image URL */
+			background-size: cover;
+			background-position: center;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			color: white;
+		}
 
-	<meta name="title" content="Puzzlefy">
-	<meta name="description" content="Solve and share puzzles to your friends!">
-	<meta name="keywords" content="puzzle, jigsaw, p5js, puzzlefy, puzzlify, image to puzzle, image to jigsaw">
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			/* Dark overlay */
+		}
 
-	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="puzzlefy.netlify.app">
-	<meta property="og:url" content="https://puzzlefy.netlify.app">
-	<!-- https://github.com/Shehan29/mvp_trip_part3/blob/main/qr.png?raw=true -->
+		.content {
+			position: relative;
+			z-index: 1;
+		}
 
-	<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/f/fe/Puzzle.jpg">
-	<meta property="og:title" content="MVP Trip Part 3">
+		.splash-title {
+			font-size: 4rem;
+			margin-bottom: 20px;
+		}
 
-	<script src=meta.js></script>
 
-	<!-- style -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+		.splash-description {
+			font-size: 1.5rem;
+			margin-bottom: 40px;
+		}
 
-	<!-- icons -->
-	<script src="https://kit.fontawesome.com/d86c5c458d.js" crossorigin="anonymous"></script>
+		.splash-button {
+			padding: 15px 30px;
+			font-size: 1.5rem;
+			background-color: rgba(255, 255, 255, 0.8);
+			color: #333;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		.splash-button:hover {
+			background-color: rgba(255, 255, 255, 1);
+		}
+	</style>
 </head>
 
-<body touch-action=none unresolved>
-	<div style="text-align:center;">
-		<h1>MVP Trip Part 3</h1>
-	</div>
-
-	<div class="ui disabled">
-		<!-- functionalities -->
-		<div class=ui-container>
-			<div class=tooltip>
-				<span class=tooltip-content>Fullscreen</span>
-				<div class=functionality onclick="toggleFullscreen(this)">
-					<i class="fas fa-expand"></i>
-				</div>
-			</div>
-			<!-- cheated -->
-			<div class=tooltip>
-				<span class=tooltip-content>Reset</span>
-				<div class=functionality onclick="reset()" style=display:none>
-					<i class="fas fa-undo"></i>
-				</div>
-			</div>
-			<div class=tooltip>
-				<span class=tooltip-content>Solve</span>
-				<div class=functionality onclick="solve()" style=display:none>
-					<i class="fas fa-puzzle-piece"></i>
-				</div>
-			</div>
+<body>
+	<div class="splash-page">
+		<div class="overlay"></div>
+		<div class="content">
+			<h1 class="splash-title">MVP Trip Part 3</h1>
+			<p class="splash-description">Welcome MVPs to the puzzle that will reveal where you will be going for Part
+				3!<br />
+				I have designed a 3 part puzzle that will provide clues that will uncover the
+				mystery location ...
+				<br />
+				I know y'all are cracked coders and I have not done a
+				good job of obfuscation so please follow through with each puzzle
+			</p>
+			<a href="part1.html" class="splash-button">Get Started</a>
 		</div>
 	</div>
-
-	<!-- scripts -->
-	<script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
-	<script src=plugins/clipboard.js></script>
-	<script src=plugins/transform.js></script>
-	<script src=plugins/cors.js></script>
-	<script src=jigsaw.js></script>
-	<script src=script.js></script>
 </body>
 
 </html>

@@ -34,7 +34,7 @@ function setup() {
     const imageParam = params.get('image') || 'https://github.com/Shehan29/mvp_trip_part3/blob/main/qr.png?raw=true'
     const imageURL = isEncoded(imageParam) ? decodeURIComponent(imageParam) : imageParam
 
-    canvas = createCanvas(windowWidth, windowHeight - 50)
+    canvas = createCanvas(windowWidth, windowHeight)
 
     // p5*js plugins
     // addCORSLoadImageFunction()
